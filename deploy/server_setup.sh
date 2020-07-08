@@ -34,7 +34,7 @@ supervisorctl update
 supervisorctl restart JSON_API
 
 # Setup nginx to make our application accessible.
-cp $PROJECT_BASE_PATH/json_api/deploy/nginx_json_api.conf /etc/nginx/sites-available/json_api.conf
+cp $PROJECT_BASE_PATH/JSON_API/deploy/nginx_json_api.conf /etc/nginx/sites-available/json_api.conf
 rm /etc/nginx/sites-enabled/default
 ln -s /etc/nginx/sites-available/json_api.conf /etc/nginx/sites-enabled/json_api.conf
 systemctl restart nginx.service
