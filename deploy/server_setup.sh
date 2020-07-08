@@ -25,7 +25,7 @@ python3 -m venv $VIRTUALENV_BASE_PATH/JSON_API
 $VIRTUALENV_BASE_PATH/JSON_API/bin/pip install -r $PROJECT_BASE_PATH/JSON_API/requirements.txt
 
 # Run migrations
-cd $PROJECT_BASE_PATH/JSON_API/src
+cd $PROJECT_BASE_PATH/JSON_API
 
 # Setup Supervisor to run our uwsgi process.
 cp $PROJECT_BASE_PATH/JSON_API/deploy/supervisor_json_api.conf /etc/supervisor/conf.d/json_api.conf
