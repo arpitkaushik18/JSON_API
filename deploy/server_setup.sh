@@ -20,18 +20,18 @@ mkdir -p $PROJECT_BASE_PATH
 git clone $PROJECT_GIT_URL $PROJECT_BASE_PATH/JSON_API
 
 mkdir -p $VIRTUALENV_BASE_PATH
-python3 -m venv $VIRTUALENV_BASE_PATH/json_api
+python3 -m venv $VIRTUALENV_BASE_PATH/JSON_API
 
-$VIRTUALENV_BASE_PATH/json_api/bin/pip install -r $PROJECT_BASE_PATH/JSON_API/requirements.txt
+$VIRTUALENV_BASE_PATH/JSON_API/bin/pip install -r $PROJECT_BASE_PATH/JSON_API/requirements.txt
 
 # Run migrations
-cd $PROJECT_BASE_PATH/json_api/src
+cd $PROJECT_BASE_PATH/JSON_API/src
 
 # Setup Supervisor to run our uwsgi process.
-cp $PROJECT_BASE_PATH/json_api/deploy/supervisor_json_api.conf /etc/supervisor/conf.d/json_api.conf
+cp $PROJECT_BASE_PATH/JSON_API/deploy/supervisor_json_api.conf /etc/supervisor/conf.d/json_api.conf
 supervisorctl reread
 supervisorctl update
-supervisorctl restart json_api
+supervisorctl restart JSON_API
 
 # Setup nginx to make our application accessible.
 cp $PROJECT_BASE_PATH/json_api/deploy/nginx_json_api.conf /etc/nginx/sites-available/json_api.conf
